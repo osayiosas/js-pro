@@ -29,6 +29,10 @@ const ProgrammerFun = new Function('name', `
     };
     `)
 
-const programmer = new Programmer('John');
+const programmer = new ProgrammerFun('John');
 
-programmer.writeCode(); // code in javascript
+programmer.writeCode(); // code in javascript  
+
+
+// function is an object example
+
