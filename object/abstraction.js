@@ -1,29 +1,26 @@
-function Programmer(name, preferedlanguage) {
+function Programmer(name, preferredLanguage) {
     this.name = name;
-    this.preferedlanguage = preferedlanguage;
+    this.preferredLanguage = preferredLanguage;
 
-    //public method
+    // public method
 
     this.writeCode = function(){
-        console.log(`${this.name} is writing ${this.preferedlanguage} code`);
-        
+        console.log(`${this.name} writes ${this.preferredLanguage} code.`);    
     }
 
-    //private method
-
+    // private method
     const drinkCoffee = function() {
-        console.log(`${this.name} is drinking coffee.`);
-        
-    }
+        console.log(`${this.name} drinks coffee.`);
+    }.bind(this); // bind 'this' to the private method
 
-    //private method called in public method
-
-    this.startday = function(){
+    // Public method that calls the private method
+    this.starDay = function() {
         drinkCoffee();
-        
     }
 }
 
-const programmer = new Programmer('John', 'JavaScript');
-programmer.writeCode();
-programmer.drinkCoffee();
+// Creating an instance of the Programmer object
+const programmer = new Programmer("Alice", "JavaScript");
+
+programmer.writeCode() // Output: Alice writes JavaScript code.
+programmer.starDay()
